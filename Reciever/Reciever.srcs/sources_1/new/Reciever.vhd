@@ -4,13 +4,18 @@ use ieee.numeric_std.all;
 
 entity UART_Receiver is
   generic (
-    ClkCyclesPerBit : integer := 115
+    -- ClkCyclesPerBit : integer := 115
+      ClkCyclesPerBit : integer := 100000000
     );
   port (
     Clock       : in  std_logic;
     SerialInput : in  std_logic;
     DataValid   : out std_logic;
-    ReceivedByte: out std_logic_vector(7 downto 0)
+    Test        : out std_logic;
+
+    Test2      : out std_logic;
+    Test3      : out std_logic
+    -- ReceivedByte: out std_logic_vector(7 downto 0)
     );
 end UART_Receiver;
 
@@ -35,6 +40,12 @@ begin
     if rising_edge(Clock) then
       SerialDataReg <= SerialInput;
       SerialData    <= SerialDataReg; 
+
+      -- Set the Test to the SerialData if ClockCounter = 0
+      if ClockCounter = 0 then
+        Test <= SerialData;
+      end if;
+
     end if; 
   end process SerialInputSampling;
 
@@ -53,7 +64,7 @@ begin
           end if;
 
         when ReceivingStartBit =>
-          if ClockCounter = (ClkCyclesPerBit-1)/2 then
+          if ClockCounter >= (ClkCyclesPerBit-1)/2 then
             if SerialData = '0' then
               ClockCounter <= 0;
               CurrentState <= ReceivingDataBits;
@@ -102,6 +113,10 @@ begin
   end process UARTReceivingProcess;
 
   DataValid    <= DataReady;
-  ReceivedByte <= ByteAssembly;
+  -- ReceivedByte <= ByteAssembly;
+
+  -- If Clock Counter > 10 then set Test2 to 1
+  Test2 <= '1' when ClockCounter > 50000000 else '0';
+
 
 end rtl;

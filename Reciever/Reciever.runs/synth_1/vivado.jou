@@ -3,12 +3,12 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Tue Dec 19 03:28:26 2023
-# Process ID: 50912
+# Start of session at: Tue Dec 19 14:27:03 2023
+# Process ID: 25572
 # Current directory: C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.runs/synth_1
-# Command line: vivado.exe -log testLedec.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source testLedec.tcl
-# Log file: C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.runs/synth_1/testLedec.vds
+# Command line: vivado.exe -log UART_Receiver.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source UART_Receiver.tcl
+# Log file: C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.runs/synth_1/UART_Receiver.vds
 # Journal file: C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.runs/synth_1\vivado.jou
 # Running On: DESKTOP-6DEOV28, OS: Windows, CPU Frequency: 2995 MHz, CPU Physical cores: 24, Host memory: 34159 MB
 #-----------------------------------------------------------
-source testLedec.tcl -notrace
+source UART_Receiver.tcl -notrace

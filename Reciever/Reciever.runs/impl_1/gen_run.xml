@@ -1,104 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1702974503">
-  <File Type="ROUTE-PWR" Name="testLedec_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="testLedec.tcl"/>
-  <File Type="ROUTE-PWR-SUM" Name="testLedec_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="testLedec_reports.tcl"/>
-  <File Type="OPT-RQA-PB" Name="testLedec_rqa_opted.pb"/>
-  <File Type="BITSTR-MMI" Name="testLedec.mmi"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="testLedec_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="testLedec_timing_summary_init.rpt"/>
-  <File Type="OPT-TIMING" Name="testLedec_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="testLedec_opt.dcp"/>
-  <File Type="OPT-DRC" Name="testLedec_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="testLedec.hwdef"/>
-  <File Type="PWROPT-DCP" Name="testLedec_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="testLedec_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="testLedec_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="testLedec_placed.dcp"/>
-  <File Type="PLACE-IO" Name="testLedec_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="testLedec_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="testLedec_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="testLedec_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="testLedec_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="testLedec_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="testLedec_incremental_reuse_pre_placed.rpt"/>
-  <File Type="BG-BIN" Name="testLedec.bin"/>
-  <File Type="PLACE-TIMING" Name="testLedec_timing_summary_placed.rpt"/>
-  <File Type="ROUTE-PWR-RPX" Name="testLedec_power_routed.rpx"/>
-  <File Type="PLACE-RQA-PB" Name="testLedec_rqa_placed.pb"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="testLedec_postplace_pwropt.dcp"/>
-  <File Type="BITSTR-MSK" Name="testLedec.msk"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="testLedec_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="testLedec_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="testLedec_drc_physopted.rpt"/>
-  <File Type="BITSTR-RBT" Name="testLedec.rbt"/>
-  <File Type="PHYSOPT-TIMING" Name="testLedec_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="testLedec_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="testLedec_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="testLedec_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="testLedec_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="testLedec_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="testLedec_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="testLedec_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="testLedec_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="testLedec_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-RQS-PB" Name="testLedec_rqs_routed.pb"/>
-  <File Type="ROUTE-STATUS" Name="testLedec_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="testLedec_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="testLedec_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="testLedec_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="testLedec_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="testLedec_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="testLedec_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="testLedec_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="testLedec_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="testLedec_bus_skew_routed.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="testLedec_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="testLedec_postroute_physopt_bb.dcp"/>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1703014020">
+  <File Type="ROUTE-PWR" Name="UART_Receiver_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="UART_Receiver.tcl"/>
+  <File Type="ROUTE-PWR-SUM" Name="UART_Receiver_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="UART_Receiver_reports.tcl"/>
+  <File Type="OPT-RQA-PB" Name="UART_Receiver_rqa_opted.pb"/>
+  <File Type="BITSTR-MMI" Name="UART_Receiver.mmi"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="UART_Receiver_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="UART_Receiver_timing_summary_init.rpt"/>
+  <File Type="OPT-TIMING" Name="UART_Receiver_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="UART_Receiver_opt.dcp"/>
+  <File Type="OPT-DRC" Name="UART_Receiver_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="UART_Receiver.hwdef"/>
+  <File Type="PWROPT-DCP" Name="UART_Receiver_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="UART_Receiver_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="UART_Receiver_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="UART_Receiver_placed.dcp"/>
+  <File Type="PLACE-IO" Name="UART_Receiver_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="UART_Receiver_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="UART_Receiver_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="UART_Receiver_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="UART_Receiver_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="UART_Receiver_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="UART_Receiver_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BIN" Name="UART_Receiver.bin"/>
+  <File Type="PLACE-TIMING" Name="UART_Receiver_timing_summary_placed.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="UART_Receiver_power_routed.rpx"/>
+  <File Type="PLACE-RQA-PB" Name="UART_Receiver_rqa_placed.pb"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="UART_Receiver_postplace_pwropt.dcp"/>
+  <File Type="BITSTR-MSK" Name="UART_Receiver.msk"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="UART_Receiver_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="UART_Receiver_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="UART_Receiver_drc_physopted.rpt"/>
+  <File Type="BITSTR-RBT" Name="UART_Receiver.rbt"/>
+  <File Type="PHYSOPT-TIMING" Name="UART_Receiver_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="UART_Receiver_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="UART_Receiver_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="UART_Receiver_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="UART_Receiver_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="UART_Receiver_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="UART_Receiver_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="UART_Receiver_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="UART_Receiver_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="UART_Receiver_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-RQS-PB" Name="UART_Receiver_rqs_routed.pb"/>
+  <File Type="ROUTE-STATUS" Name="UART_Receiver_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="UART_Receiver_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="UART_Receiver_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="UART_Receiver_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="UART_Receiver_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="UART_Receiver_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="UART_Receiver_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="UART_Receiver_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="UART_Receiver_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="UART_Receiver_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="UART_Receiver_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="UART_Receiver_postroute_physopt_bb.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-TIMING" Name="testLedec_timing_summary_postroute_physopted.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="testLedec_timing_summary_postroute_physopted.pb"/>
   <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="testLedec_timing_summary_postroute_physopted.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="testLedec_bus_skew_postroute_physopted.rpt"/>
-  <File Type="BG-BIT" Name="testLedec.bit"/>
+  <File Type="BG-BIT" Name="UART_Receiver.bit"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="testLedec_bus_skew_postroute_physopted.pb"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="testLedec_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BITSTR-NKY" Name="testLedec.nky"/>
-  <File Type="BITSTR-BMM" Name="testLedec_bd.bmm"/>
-  <File Type="PDI-FILE" Name="testLedec.pdi"/>
-  <File Type="BOOT-PDI-FILE" Name="testLedec_boot.pdi"/>
-  <File Type="PL-PDI-FILE" Name="testLedec_pld.pdi"/>
-  <File Type="RCFI_FILE" Name="testLedec.rcfi"/>
-  <File Type="CFI_FILE" Name="testLedec.cfi"/>
-  <File Type="RNPI_FILE" Name="testLedec.rnpi"/>
-  <File Type="NPI_FILE" Name="testLedec.npi"/>
-  <File Type="RBD_FILE" Name="testLedec.rbd"/>
+  <File Type="BITSTR-NKY" Name="UART_Receiver.nky"/>
+  <File Type="BITSTR-BMM" Name="UART_Receiver_bd.bmm"/>
+  <File Type="PDI-FILE" Name="UART_Receiver.pdi"/>
+  <File Type="BOOT-PDI-FILE" Name="UART_Receiver_boot.pdi"/>
+  <File Type="PL-PDI-FILE" Name="UART_Receiver_pld.pdi"/>
+  <File Type="RCFI_FILE" Name="UART_Receiver.rcfi"/>
+  <File Type="CFI_FILE" Name="UART_Receiver.cfi"/>
+  <File Type="RNPI_FILE" Name="UART_Receiver.rnpi"/>
+  <File Type="NPI_FILE" Name="UART_Receiver.npi"/>
+  <File Type="RBD_FILE" Name="UART_Receiver.rbd"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="testLedec.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="testLedec.sysdef"/>
-  <File Type="BG-BGN" Name="testLedec.bgn"/>
-  <File Type="BG-DRC" Name="testLedec.drc"/>
-  <File Type="RDI-RDI" Name="testLedec.vdi"/>
+  <File Type="BITSTR-LTX" Name="UART_Receiver.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="UART_Receiver.sysdef"/>
+  <File Type="BG-BGN" Name="UART_Receiver.bgn"/>
+  <File Type="BG-DRC" Name="UART_Receiver.drc"/>
+  <File Type="RDI-RDI" Name="UART_Receiver.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="ROUTE-RQS" Name="testLedec_routed.rqs"/>
-  <File Type="POSTROUTE-PHYSOPT-RQS" Name="testLedec_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS" Name="UART_Receiver_routed.rqs"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="UART_Receiver_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/Reciever.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/leddec.vhd">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/testLedec.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/Reciever.vhd">
       <FileInfo>
         <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -107,8 +108,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="testLedec"/>
-      <Option Name="TopAutoSet" Val="TRUE"/>
+      <Option Name="TopModule" Val="UART_Receiver"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
@@ -121,6 +121,7 @@
     </File>
     <File Path="$PSRCDIR/constrs_1/new/testLedec.xdc">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
@@ -144,9 +145,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>

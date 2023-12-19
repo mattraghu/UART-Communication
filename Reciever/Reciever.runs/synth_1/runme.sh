@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log testLedec.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source testLedec.tcl
+EAStep vivado -log UART_Receiver.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source UART_Receiver.tcl
