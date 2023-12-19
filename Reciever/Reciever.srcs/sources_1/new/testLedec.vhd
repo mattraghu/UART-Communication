@@ -23,10 +23,10 @@ ARCHITECTURE Behavioral OF testLedec IS
 		);
 	END COMPONENT;
 
-    SIGNAL S : STD_LOGIC_VECTOR (15 DOWNTO 0) := "0000000000000111"; -- Connect C1 and L1 for values of 4 digits (Default to 7)
+    SIGNAL S : STD_LOGIC_VECTOR (15 DOWNTO 0) := "0000000000110111"; -- Connect C1 and L1 for values of 4 digits (Default to 7)
 	SIGNAL md : STD_LOGIC_VECTOR (2 DOWNTO 0); -- mpx selects displays
 	SIGNAL display : STD_LOGIC_VECTOR (3 DOWNTO 0); -- Send digit for only one display to leddec
-    SIGNAL counter : STD_LOGIC_VECTOR (26 DOWNTO 0) := "000000000000000000000000000"; -- (2**27/(100E6)) = 1.34217728s for one cycle
+    SIGNAL counter : STD_LOGIC_VECTOR (26 DOWNTO 0); --:= "000000000000000000000000000"; -- (2**27/(100E6)) = 1.34217728s for one cycle
 
 BEGIN
 	L1 : leddec
@@ -35,22 +35,27 @@ BEGIN
     -- Counter Process 
     PROCESS(clk_100MHz)
     BEGIN
-        IF (clk_100MHz'EVENT AND clk_100MHz = '1') THEN
-            IF (counter = "111111111111111111111111111") THEN
-                counter <= "000000000000000000000000000";
-            ELSE
+        IF (rising_edge(clk_100MHz)) THEN
+            -- IF (counter = "111111111111111111111111111") THEN
+            --     counter <= "000000000000000000000000000";
+            -- ELSE
                 counter <= counter + 1;
-            END IF;
+            -- END IF;
         END IF;
     END PROCESS;
 
     -- Process To Change Dig Every 1s
-    PROCESS(counter)
-    BEGIN
-        IF (counter = "111111111111111111111111111") THEN
-            md <= md + 1;
-        END IF;
-    END PROCESS;
+    md <= counter(19 DOWNTO 17);
+    -- PROCESS(counter)
+    -- BEGIN
+    --     IF (counter = "111111111111111111111111111") THEN
+    --         -- IF (md = "111") THEN
+    --         --     md <= "000";
+    --         -- ELSE
+    --             md <= md + 1;
+    --         -- END IF;
+    --     END IF;
+    -- END PROCESS;
 
     
 

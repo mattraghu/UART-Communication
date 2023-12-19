@@ -19,11 +19,12 @@ BEGIN
 	         data(15 DOWNTO 12); -- digit 3
 
 
-	data4(0) <= 
-			'1' WHEN data(15 DOWNTO 12) = "0000" AND dig = "011" ELSE -- If the last digit is 0, turn off the last digit
-			'1' WHEN data(15 DOWNTO 8) = "00000000" AND dig = "010" ELSE -- If the last two digits are 0, turn off the last two digits
-			'1' WHEN data(15 DOWNTO 4) = "000000000000" AND dig = "001" ELSE -- If the last three digits are 0, turn off the last three digits
-			'0';	-- Otherwise, turn on the last digit
+	-- data4(0) <= 
+	-- 		'1' WHEN data(15 DOWNTO 12) = "0000" AND dig = "011" ELSE -- If the last digit is 0, turn off the last digit
+	-- 		'1' WHEN data(15 DOWNTO 8) = "00000000" AND dig = "010" ELSE -- If the last two digits are 0, turn off the last two digits
+	-- 		'1' WHEN data(15 DOWNTO 4) = "000000000000" AND dig = "001" ELSE -- If the last three digits are 0, turn off the last three digits
+	-- 		'0';	-- Otherwise, turn on the last digit
+	data4(0) <= '0';
 
 
 
