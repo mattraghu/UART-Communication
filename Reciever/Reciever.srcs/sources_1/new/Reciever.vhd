@@ -19,6 +19,9 @@ entity UART_Receiver is
     anode      : out std_logic_vector(7 downto 0);
     seg       : out std_logic_vector(6 downto 0);
     ReceivedByte: out std_logic_vector(7 downto 0)
+
+    -- --Transmitter Variables
+    -- TransmitByte_SW : in std_logic_vector(7 downto 0);
     );
 end UART_Receiver;
 
@@ -32,6 +35,20 @@ architecture rtl of UART_Receiver is
 			seg : OUT STD_LOGIC_VECTOR (6 DOWNTO 0)
 		);
 	END COMPONENT;
+
+  -- COMPONENT UART_Transmitter IS
+  --   GENERIC (
+  --     ClkCyclesPerBit : integer := 100000000
+  --   );
+  --   PORT (
+  --     Clock        : in  std_logic;
+  --     TransmitDV   : in  std_logic;                 -- Data Valid signal for transmission
+  --     TransmitByte : in  std_logic_vector(7 downto 0); -- Byte to transmit
+  --     -- TX_Active    : out std_logic;                 -- Indicates transmission is active
+  --     TX_Serial    : out std_logic;                 -- Serial output
+  --     TX_Done      : out std_logic                  -- Transmission done signal
+  --   );
+  -- END COMPONENT;
 
   type StateMachine is (Idle, ReceivingStartBit, ReceivingDataBits,
                         ReceivingStopBit, Cleanup);
@@ -47,6 +64,7 @@ architecture rtl of UART_Receiver is
 
   signal cnt : STD_LOGIC_VECTOR(32 downto 0) := (others => '0');
 
+
    
 begin
 
@@ -59,6 +77,7 @@ begin
 
   SerialInputSampling : process (Clock)
   begin
+
     if rising_edge(Clock) then
       cnt <= cnt + 1;
 
@@ -70,6 +89,7 @@ begin
       if ClockCounter = 0 then
         Test <= SerialData;
       end if;
+
 
     end if; 
   end process SerialInputSampling;
