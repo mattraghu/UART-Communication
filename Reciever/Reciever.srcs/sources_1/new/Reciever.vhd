@@ -14,12 +14,24 @@ entity UART_Receiver is
     Test        : out std_logic;
 
     Test2      : out std_logic;
-    Test3      : out std_logic
-    -- ReceivedByte: out std_logic_vector(7 downto 0)
+    Test3      : out std_logic;
+
+    anode      : out std_logic_vector(7 downto 0);
+    seg       : out std_logic_vector(6 downto 0);
+    ReceivedByte: out std_logic_vector(7 downto 0)
     );
 end UART_Receiver;
 
 architecture rtl of UART_Receiver is
+
+	COMPONENT leddec IS
+		PORT (
+			dig : IN STD_LOGIC_VECTOR (2 DOWNTO 0);
+			data : IN STD_LOGIC_VECTOR (15 DOWNTO 0); -- DON'T change, data is fixed 4 bits in leddec for each displays
+			anode : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+			seg : OUT STD_LOGIC_VECTOR (6 DOWNTO 0)
+		);
+	END COMPONENT;
 
   type StateMachine is (Idle, ReceivingStartBit, ReceivingDataBits,
                         ReceivingStopBit, Cleanup);
@@ -32,12 +44,25 @@ architecture rtl of UART_Receiver is
   signal BitCounter    : integer range 0 to 7 := 0;
   signal ByteAssembly  : std_logic_vector(7 downto 0) := (others => '0');
   signal DataReady     : std_logic := '0';
+
+  signal cnt : STD_LOGIC_VECTOR(32 downto 0) := (others => '0');
+
    
 begin
+
+  leddec1 : leddec PORT MAP (
+    dig => cnt(19 downto 17),
+    data => ReceivedByte(7 downto 0),
+    anode => anode,
+    seg => seg
+  );
 
   SerialInputSampling : process (Clock)
   begin
     if rising_edge(Clock) then
+      cnt <= cnt + 1;
+
+      -- Shift the SerialInput into the SerialDataReg
       SerialDataReg <= SerialInput;
       SerialData    <= SerialDataReg; 
 
@@ -113,7 +138,7 @@ begin
   end process UARTReceivingProcess;
 
   DataValid    <= DataReady;
-  -- ReceivedByte <= ByteAssembly;
+  ReceivedByte <= ByteAssembly;
 
   -- If Clock Counter > 10 then set Test2 to 1
   Test2 <= '1' when ClockCounter > 50000000 else '0';
