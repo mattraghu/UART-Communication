@@ -43,3 +43,18 @@
     <Process Command="vivado.bat" Owner="mattr" Host="DESKTOP-6DEOV28" Pid="16912" HostCore="32" HostMemory="034159706112">
     </Process>
 </ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="mattr" Host="DESKTOP-6DEOV28" Pid="38152" HostCore="32" HostMemory="034159706112">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="mattr" Host="DESKTOP-6DEOV28" Pid="30328" HostCore="32" HostMemory="034159706112">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="mattr" Host="DESKTOP-6DEOV28" Pid="12808" HostCore="32" HostMemory="034159706112">
+    </Process>
+</ProcessHandle>

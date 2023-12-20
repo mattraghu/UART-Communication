@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date             : Wed Dec 20 13:56:36 2023
+| Date             : Wed Dec 20 18:53:14 2023
 | Host             : DESKTOP-6DEOV28 running 64-bit major release  (build 9200)
 | Command          : report_power -file UART_Receiver_power_routed.rpt -pb UART_Receiver_power_summary_routed.pb -rpx UART_Receiver_power_routed.rpx
 | Design           : UART_Receiver
@@ -29,20 +29,20 @@ Table of Contents
 1. Summary
 ----------
 
-+--------------------------+--------------+
-| Total On-Chip Power (W)  | 12.050       |
-| Design Power Budget (W)  | Unspecified* |
-| Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 11.811       |
-| Device Static (W)        | 0.239        |
-| Effective TJA (C/W)      | 4.6          |
-| Max Ambient (C)          | 30.0         |
-| Junction Temperature (C) | 80.0         |
-| Confidence Level         | Low          |
-| Setting File             | ---          |
-| Simulation Activity File | ---          |
-| Design Nets Matched      | NA           |
-+--------------------------+--------------+
++--------------------------+----------------------------------+
+| Total On-Chip Power (W)  | 17.850 (Junction temp exceeded!) |
+| Design Power Budget (W)  | Unspecified*                     |
+| Power Budget Margin (W)  | NA                               |
+| Dynamic (W)              | 17.367                           |
+| Device Static (W)        | 0.483                            |
+| Effective TJA (C/W)      | 4.6                              |
+| Max Ambient (C)          | 3.6                              |
+| Junction Temperature (C) | 106.4                            |
+| Confidence Level         | Low                              |
+| Setting File             | ---                              |
+| Simulation Activity File | ---                              |
+| Design Nets Matched      | NA                               |
++--------------------------+----------------------------------+
 * Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
 
 
@@ -52,16 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.413 |      283 |       --- |             --- |
-|   LUT as Logic |     0.339 |      115 |     63400 |            0.18 |
-|   CARRY4       |     0.039 |       20 |     15850 |            0.13 |
-|   Register     |     0.029 |      111 |    126800 |            0.09 |
+| Slice Logic    |     0.449 |      289 |       --- |             --- |
+|   LUT as Logic |     0.381 |      119 |     63400 |            0.19 |
+|   CARRY4       |     0.035 |       20 |     15850 |            0.13 |
+|   Register     |     0.027 |      111 |    126800 |            0.09 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |        4 |       --- |             --- |
-| Signals        |     0.475 |      235 |       --- |             --- |
-| I/O            |    10.923 |       32 |       210 |           15.24 |
-| Static Power   |     0.239 |          |           |                 |
-| Total          |    12.050 |          |           |                 |
+| Signals        |     0.569 |      244 |       --- |             --- |
+| I/O            |    16.348 |       32 |       210 |           15.24 |
+| Static Power   |     0.483 |          |           |                 |
+| Total          |    17.850 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,16 +71,16 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     1.060 |       0.932 |      0.128 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.431 |       0.399 |      0.032 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     3.083 |       3.079 |      0.004 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     1.381 |       1.063 |      0.319 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.656 |       0.597 |      0.059 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     4.619 |       4.615 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccbram   |       1.000 |     0.003 |       0.000 |      0.003 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.009 |       0.000 |      0.009 |       NA    | Unspecified | NA         |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |       NA    | Unspecified | NA         |
@@ -138,8 +138,8 @@ Table of Contents
 +-------------------------+-----------+
 | Name                    | Power (W) |
 +-------------------------+-----------+
-| UART_Receiver           |    11.811 |
-|   UART_Transmitter_Inst |     0.304 |
+| UART_Receiver           |    17.367 |
+|   UART_Transmitter_Inst |     0.302 |
 +-------------------------+-----------+
 
 

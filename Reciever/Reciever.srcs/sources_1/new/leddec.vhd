@@ -5,7 +5,8 @@ ENTITY leddec IS
 	PORT (
 		dig 	: IN STD_LOGIC_VECTOR (1 DOWNTO 0); 	-- which digit to display
 		data 	: IN STD_LOGIC_VECTOR (7 DOWNTO 0); 	-- 16-bit (4-digit) data
-		t_r 	: IN STD_LOGIC 				 			-- flag bit for which panels to use for dig
+		data2 : IN STD_LOGIC_VECTOR (7 DOWNTO 0); 	
+		t_r 	: IN STD_LOGIC; 				 			-- flag bit for which panels to use for dig
 		anode 	: OUT STD_LOGIC_VECTOR (7 DOWNTO 0); 	-- which anode to turn on
 		seg 	: OUT STD_LOGIC_VECTOR (6 DOWNTO 0)); 	-- segment code for current digit
 END leddec;
@@ -14,24 +15,25 @@ ARCHITECTURE Behavioral OF leddec IS
 	SIGNAL data4 : STD_LOGIC_VECTOR (4 DOWNTO 0); 	-- binary value of current digit
 BEGIN
 	-- Select digit data to be displayed in this mpx period
-	data4(4 DOWNTO 1) <= data(3 DOWNTO 0) WHEN dig = "00" ELSE -- digit 0
-	         data(7 DOWNTO 4) WHEN dig = "01" ELSE -- digit 1
-			 "0000";
-	        --  data(11 DOWNTO 8) WHEN dig = "010" ELSE -- digit 2
-	        --  data(15 DOWNTO 12); -- digit 3
+	data4(4 DOWNTO 1) <= data(3 DOWNTO 0) WHEN dig = "00" AND t_r = '0' ELSE 
+						data(7 DOWNTO 4) WHEN dig = "01" AND t_r = '0' ELSE 
+						data2(3 DOWNTO 0) WHEN dig = "00" AND t_r = '1' ELSE 
+						data2(7 DOWNTO 4) WHEN dig = "01" AND t_r = '1' ELSE 
+						"0000";
 
+	
 	--Remove trailing zeros
-	data4(0) <=
-			-- '1' WHEN data(7 DOWNTO 4) = "0000" AND dig = "001";-- If the last digit is 0, turn off the last digit
-			'0' WHEN (dig = "01" or dig = "00") ELSE
-			'1';
+	-- data4(0) <=
+	-- 		-- '1' WHEN data(7 DOWNTO 4) = "0000" AND dig = "001";-- If the last digit is 0, turn off the last digit
+	-- 		'0' WHEN (dig = "01" or dig = "00") ELSE
+	-- 		'1';
 
 	-- data4(0) <= 
 	-- 		'1' WHEN data(15 DOWNTO 12) = "0000" AND dig = "011" ELSE -- If the last digit is 0, turn off the last digit
 	-- 		'1' WHEN data(15 DOWNTO 8) = "00000000" AND dig = "010" ELSE -- If the last two digits are 0, turn off the last two digits
 	-- 		'1' WHEN data(15 DOWNTO 4) = "000000000000" AND dig = "001" ELSE -- If the last three digits are 0, turn off the last three digits
 	-- 		'0';	-- Otherwise, turn on the last digit
-	data4(0) <= '0';
+	-- data4(0) <= '0';
 
 
 

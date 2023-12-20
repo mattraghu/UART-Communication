@@ -17,11 +17,11 @@ entity UART_Receiver is
     Test2       : out std_logic;
     Test3       : out std_logic;
 
-    r_anode     : out std_logic_vector(7 downto 0);
-    r_seg       : out std_logic_vector(6 downto 0);
+    anode     : out std_logic_vector(7 downto 0);
+    seg       : out std_logic_vector(6 downto 0);
 
-    t_anode     : out std_logic_vector(7 downto 0);
-    t_seg       : out std_logic_vector(6 downto 0);
+    -- t_anode     : out std_logic_vector(7 downto 0);
+    -- t_seg       : out std_logic_vector(6 downto 0);
     -- ReceivedByte: out std_logic_vector(7 downto 0)
 
     --Transmitter Variables
@@ -40,7 +40,8 @@ architecture rtl of UART_Receiver is
 		PORT (
 			dig   : IN STD_LOGIC_VECTOR (1 DOWNTO 0);
 			data  : IN STD_LOGIC_VECTOR (7 DOWNTO 0); -- DON'T change, data is fixed 4 bits in leddec for each displays
-      t_r   : IN STD_LOGIC
+      data2 : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+      t_r   : IN STD_LOGIC;
 			anode : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
 			seg   : OUT STD_LOGIC_VECTOR (6 DOWNTO 0)
 		);
@@ -73,16 +74,14 @@ architecture rtl of UART_Receiver is
   signal DataReady     : std_logic := '0';
 
   signal cnt : STD_LOGIC_VECTOR(32 downto 0) := (others => '0');
-  signal dig : STD_LOGIC_VECTOR(1 downto 0) := (others => '0'); 
+  -- signal dig : STD_LOGIC_VECTOR(1 downto 0) := (others => '0'); 
 
 
   signal SerialInput   : std_logic := '1';
 
-
-
-
-   
 begin
+  
+
   -- Recieve Port test
   Test <= ReceivePort;
   SerialInput <= ReceivePort;
@@ -105,24 +104,25 @@ begin
 
 
 
-  dig <= cnt(18 downto 17);
+  -- dig <= cnt(18 downto 17);
   L1 : leddec 
   PORT MAP (
-    dig => dig,
-    t_r => '0'
+    dig => cnt(18 downto 17),
+    t_r => cnt(19),
     data => ByteAssembly,
-    anode => r_anode,
-    seg => r_seg
+    anode => anode,
+    seg => seg,
+    data2 => TransmitByte_SW
   );
 
-  L2 : leddec 
-  PORT MAP (
-    dig => dig,
-    t_r => '1'
-    data => TransmitByte_SW,
-    anode => t_anode,
-    seg => t_seg
-  );
+  -- L2 : leddec 
+  -- PORT MAP (
+  --   dig => dig,
+  --   t_r => '1',
+  --   data => TransmitByte_SW,
+  --   anode => anode,
+  --   seg => seg
+  -- );
 
   SerialInputSampling : process (Clock)
   begin

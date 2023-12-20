@@ -3,8 +3,8 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Wed Dec 20 13:55:37 2023
-# Process ID: 28572
+# Start of session at: Wed Dec 20 18:52:13 2023
+# Process ID: 6184
 # Current directory: C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.runs/synth_1
 # Command line: vivado.exe -log UART_Receiver.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source UART_Receiver.tcl
 # Log file: C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.runs/synth_1/UART_Receiver.vds
@@ -24,36 +24,36 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 4532
+INFO: [Synth 8-7075] Helper process launched with PID 29600
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1340.430 ; gain = 441.992
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1339.980 ; gain = 439.773
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'UART_Receiver' [C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.srcs/sources_1/new/Reciever.vhd:34]
+INFO: [Synth 8-638] synthesizing module 'UART_Receiver' [C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.srcs/sources_1/new/Reciever.vhd:37]
 	Parameter ClkCyclesPerBit bound to: 300000000 - type: integer 
-INFO: [Synth 8-3491] module 'UART_Transmitter' declared at 'C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.srcs/sources_1/new/UART_Transmitter.vhd:6' bound to instance 'UART_Transmitter_Inst' of component 'UART_Transmitter' [C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.srcs/sources_1/new/Reciever.vhd:87]
+INFO: [Synth 8-3491] module 'UART_Transmitter' declared at 'C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.srcs/sources_1/new/UART_Transmitter.vhd:6' bound to instance 'UART_Transmitter_Inst' of component 'UART_Transmitter' [C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.srcs/sources_1/new/Reciever.vhd:92]
 INFO: [Synth 8-638] synthesizing module 'UART_Transmitter' [C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.srcs/sources_1/new/UART_Transmitter.vhd:21]
 	Parameter ClkCyclesPerBit bound to: 300000000 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'UART_Transmitter' (0#1) [C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.srcs/sources_1/new/UART_Transmitter.vhd:21]
-INFO: [Synth 8-3491] module 'leddec' declared at 'C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.srcs/sources_1/new/leddec.vhd:4' bound to instance 'L1' of component 'leddec' [C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.srcs/sources_1/new/Reciever.vhd:103]
-INFO: [Synth 8-638] synthesizing module 'leddec' [C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.srcs/sources_1/new/leddec.vhd:12]
-INFO: [Synth 8-256] done synthesizing module 'leddec' (0#1) [C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.srcs/sources_1/new/leddec.vhd:12]
-INFO: [Synth 8-256] done synthesizing module 'UART_Receiver' (0#1) [C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.srcs/sources_1/new/Reciever.vhd:34]
+INFO: [Synth 8-3491] module 'leddec' declared at 'C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.srcs/sources_1/new/leddec.vhd:4' bound to instance 'L1' of component 'leddec' [C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.srcs/sources_1/new/Reciever.vhd:108]
+INFO: [Synth 8-638] synthesizing module 'leddec' [C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.srcs/sources_1/new/leddec.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'leddec' (0#1) [C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.srcs/sources_1/new/leddec.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'UART_Receiver' (0#1) [C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.srcs/sources_1/new/Reciever.vhd:37]
 WARNING: [Synth 8-6014] Unused sequential element TX_Complete_reg was removed.  [C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.srcs/sources_1/new/UART_Transmitter.vhd:46]
 WARNING: [Synth 8-3848] Net Test3 in module/entity UART_Receiver does not have driver. [C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.srcs/sources_1/new/Reciever.vhd:18]
 WARNING: [Synth 8-7129] Port Test3 in module UART_Receiver is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1449.418 ; gain = 550.980
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1450.410 ; gain = 550.203
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1449.418 ; gain = 550.980
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1450.410 ; gain = 550.203
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1449.418 ; gain = 550.980
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1450.410 ; gain = 550.203
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1449.418 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1450.410 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -64,28 +64,28 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/UART_Receiver_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1551.031 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1548.992 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1551.031 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1548.992 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1551.031 ; gain = 652.594
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1548.992 ; gain = 648.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1551.031 ; gain = 652.594
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1548.992 ; gain = 648.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1551.031 ; gain = 652.594
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1548.992 ; gain = 648.785
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'CurrentState_reg' in module 'UART_Transmitter'
 ---------------------------------------------------------------------------------------------------
@@ -99,7 +99,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'CurrentState_reg' in module
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'CurrentState_reg' using encoding 'sequential' in module 'UART_Transmitter'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1551.031 ; gain = 652.594
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1548.992 ; gain = 648.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -116,11 +116,9 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   5 Input   29 Bit        Muxes := 1     
 	   2 Input   29 Bit        Muxes := 2     
-	   2 Input    8 Bit        Muxes := 2     
-	   4 Input    8 Bit        Muxes := 1     
+	   9 Input    8 Bit        Muxes := 1     
 	   6 Input    8 Bit        Muxes := 1     
-	  17 Input    7 Bit        Muxes := 1     
-	   2 Input    4 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 1     
 	   2 Input    3 Bit        Muxes := 8     
 	   5 Input    3 Bit        Muxes := 1     
 	   3 Input    2 Bit        Muxes := 2     
@@ -143,34 +141,41 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-3917] design UART_Receiver has port anode[7] driven by constant 1
-WARNING: [Synth 8-3917] design UART_Receiver has port anode[6] driven by constant 1
-WARNING: [Synth 8-3917] design UART_Receiver has port anode[5] driven by constant 1
-WARNING: [Synth 8-3917] design UART_Receiver has port anode[4] driven by constant 1
 WARNING: [Synth 8-7129] Port Test3 in module UART_Receiver is either unconnected or has no load
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin p_0_out with 1st driver pin 'L1/__0/p_0_out' [C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.srcs/sources_1/new/leddec.vhd:25]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin p_0_out with 2nd driver pin 'GND' [C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.srcs/sources_1/new/leddec.vhd:25]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net p_0_out is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.srcs/sources_1/new/leddec.vhd:25]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1551.031 ; gain = 652.594
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1548.992 ; gain = 648.785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++--------------+------------+---------------+----------------+
+|Module Name   | RTL Object | Depth x Width | Implemented As | 
++--------------+------------+---------------+----------------+
+|UART_Receiver | p_0_out    | 32x7          | LUT            | 
++--------------+------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1551.031 ; gain = 652.594
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1548.992 ; gain = 648.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1551.031 ; gain = 652.594
+Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1548.992 ; gain = 648.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1551.031 ; gain = 652.594
+Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1548.992 ; gain = 648.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -188,37 +193,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1551.031 ; gain = 652.594
+Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1548.992 ; gain = 648.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1551.031 ; gain = 652.594
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1548.992 ; gain = 648.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1551.031 ; gain = 652.594
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1548.992 ; gain = 648.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1551.031 ; gain = 652.594
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1548.992 ; gain = 648.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1551.031 ; gain = 652.594
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1548.992 ; gain = 648.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1551.031 ; gain = 652.594
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1548.992 ; gain = 648.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -237,39 +242,38 @@ Report Cell Usage:
 |1     |BUFG   |     1|
 |2     |CARRY4 |    20|
 |3     |LUT1   |     1|
-|4     |LUT2   |    63|
-|5     |LUT3   |    17|
-|6     |LUT4   |    26|
-|7     |LUT5   |    12|
-|8     |LUT6   |    28|
+|4     |LUT2   |    64|
+|5     |LUT3   |    21|
+|6     |LUT4   |    23|
+|7     |LUT5   |    11|
+|8     |LUT6   |    33|
 |9     |FDRE   |   111|
 |10    |IBUF   |    11|
 |11    |OBUF   |    20|
 |12    |OBUFT  |     1|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1551.031 ; gain = 652.594
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1548.992 ; gain = 648.785
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 3 critical warnings and 6 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 1551.031 ; gain = 550.980
-Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1551.031 ; gain = 652.594
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 1548.992 ; gain = 550.203
+Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1548.992 ; gain = 648.785
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1551.031 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1548.992 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 20 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1551.031 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1548.992 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 843f77a2
+Synth Design complete | Checksum: 92f7150e
 INFO: [Common 17-83] Releasing license: Synthesis
-31 Infos, 9 Warnings, 3 Critical Warnings and 0 Errors encountered.
+31 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1551.031 ; gain = 1058.953
-INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1551.031 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1548.992 ; gain = 1056.605
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1548.992 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.runs/synth_1/UART_Receiver.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file UART_Receiver_utilization_synth.rpt -pb UART_Receiver_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Dec 20 13:55:59 2023...
+INFO: [Common 17-206] Exiting Vivado at Wed Dec 20 18:52:35 2023...

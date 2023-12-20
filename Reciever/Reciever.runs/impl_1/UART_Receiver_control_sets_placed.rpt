@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Wed Dec 20 13:56:20 2023
+| Date         : Wed Dec 20 18:52:57 2023
 | Host         : DESKTOP-6DEOV28 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file UART_Receiver_control_sets_placed.rpt
 | Design       : UART_Receiver
@@ -61,7 +61,7 @@ Table of Contents
 | No           | No                    | No                     |              42 |           15 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |              11 |            5 |
+| Yes          | No                    | No                     |              11 |            6 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |              58 |           17 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -73,12 +73,12 @@ Table of Contents
 +------------------+-----------------------------------------+-------------------------------------+------------------+----------------+--------------+
 |   Clock Signal   |              Enable Signal              |           Set/Reset Signal          | Slice Load Count | Bel Load Count | Bels / Slice |
 +------------------+-----------------------------------------+-------------------------------------+------------------+----------------+--------------+
+|  Clock_IBUF_BUFG | DataReady_i_1_n_0                       |                                     |                1 |              1 |         1.00 |
 |  Clock_IBUF_BUFG | UART_Transmitter_Inst/TX_Active_i_1_n_0 |                                     |                1 |              1 |         1.00 |
 |  Clock_IBUF_BUFG | UART_Transmitter_Inst/CurrentState[2]   |                                     |                1 |              1 |         1.00 |
-|  Clock_IBUF_BUFG | DataReady_i_1_n_0                       |                                     |                1 |              1 |         1.00 |
-|  Clock_IBUF_BUFG | UART_Transmitter_Inst/TX_Data_0         |                                     |                2 |              8 |         4.00 |
-|  Clock_IBUF_BUFG | UART_Transmitter_Inst/ClockCounter      | UART_Transmitter_Inst/ClockCounter0 |                8 |             29 |         3.62 |
+|  Clock_IBUF_BUFG | UART_Transmitter_Inst/TX_Data_0         |                                     |                3 |              8 |         2.67 |
 |  Clock_IBUF_BUFG | ClockCounter[28]_i_2__0_n_0             | ClockCounter[28]_i_1_n_0            |                9 |             29 |         3.22 |
+|  Clock_IBUF_BUFG | UART_Transmitter_Inst/ClockCounter      | UART_Transmitter_Inst/ClockCounter0 |                8 |             29 |         3.62 |
 |  Clock_IBUF_BUFG |                                         |                                     |               15 |             42 |         2.80 |
 +------------------+-----------------------------------------+-------------------------------------+------------------+----------------+--------------+
 
