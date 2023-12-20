@@ -4,7 +4,7 @@ USE IEEE.STD_LOGIC_1164.ALL;
 ENTITY leddec IS
 	PORT (
 		dig : IN STD_LOGIC_VECTOR (2 DOWNTO 0); -- which digit to currently display
-		data : IN STD_LOGIC_VECTOR (15 DOWNTO 0); -- 16-bit (4-digit) data
+		data : IN STD_LOGIC_VECTOR (7 DOWNTO 0); -- 16-bit (4-digit) data
 		anode : OUT STD_LOGIC_VECTOR (7 DOWNTO 0); -- which anode to turn on
 		seg : OUT STD_LOGIC_VECTOR (6 DOWNTO 0)); -- segment code for current digit
 END leddec;
@@ -15,9 +15,15 @@ BEGIN
 	-- Select digit data to be displayed in this mpx period
 	data4(4 DOWNTO 1) <= data(3 DOWNTO 0) WHEN dig = "000" ELSE -- digit 0
 	         data(7 DOWNTO 4) WHEN dig = "001" ELSE -- digit 1
-	         data(11 DOWNTO 8) WHEN dig = "010" ELSE -- digit 2
-	         data(15 DOWNTO 12); -- digit 3
+			 "0000";
+	        --  data(11 DOWNTO 8) WHEN dig = "010" ELSE -- digit 2
+	        --  data(15 DOWNTO 12); -- digit 3
 
+	--Remove trailing zeros
+	data4(0) <=
+			-- '1' WHEN data(7 DOWNTO 4) = "0000" AND dig = "001";-- If the last digit is 0, turn off the last digit
+			'0' WHEN (dig = "001" or dig = "000") ELSE
+			'1';
 
 	-- data4(0) <= 
 	-- 		'1' WHEN data(15 DOWNTO 12) = "0000" AND dig = "011" ELSE -- If the last digit is 0, turn off the last digit

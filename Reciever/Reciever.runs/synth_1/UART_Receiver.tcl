@@ -88,7 +88,11 @@ set_property ip_output_repo c:/Users/mattr/OneDrive/Documents/Projects/UART-Comm
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_vhdl -library xil_defaultlib C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.srcs/sources_1/new/Reciever.vhd
+read_vhdl -library xil_defaultlib {
+  C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.srcs/sources_1/new/UART_Transmitter.vhd
+  C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.srcs/sources_1/new/leddec.vhd
+  C:/Users/mattr/OneDrive/Documents/Projects/UART-Communication/Reciever/Reciever.srcs/sources_1/new/Reciever.vhd
+}
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

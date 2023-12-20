@@ -11,9 +11,9 @@ entity UART_Transmitter is
     Clock        : in  std_logic;
     TransmitDV   : in  std_logic;                 -- Data Valid signal for transmission
     TransmitByte : in  std_logic_vector(7 downto 0); -- Byte to transmit
-    -- TX_Active    : out std_logic;                 -- Indicates transmission is active
-    TX_Serial    : out std_logic;                 -- Serial output
-    TX_Done      : out std_logic                  -- Transmission done signal
+    TX_Active    : out std_logic;                 -- Indicates transmission is active
+    TX_Serial    : out std_logic                 -- Serial output
+    -- TX_Done      : out std_logic                  -- Transmission done signal
     );
 end UART_Transmitter;
 
@@ -28,6 +28,8 @@ architecture RTL of UART_Transmitter is
   signal BitIndex     : integer range 0 to 7 := 0;  -- For 8-bit data
   signal TX_Data      : std_logic_vector(7 downto 0) := (others => '0');
   signal TX_Complete  : std_logic := '0';
+
+--   signal TransmitByte : std_logic_vector(7 downto 0) := "00000111";
    
 begin
 
@@ -39,7 +41,7 @@ begin
 
         -- Idle State: Wait for data valid signal
         when Idle =>
-        --   TX_Active <= '0';
+          TX_Active <= '0';
           TX_Serial <= '1';         -- Line High for Idle
           TX_Complete <= '0';
           ClockCounter <= 0;
@@ -54,7 +56,7 @@ begin
 
         -- Transmitting Start Bit (logic '0')
         when TX_StartBit =>
-        --   TX_Active <= '1';
+          TX_Active <= '1';
           TX_Serial <= '0';
 
           -- Timing for Start Bit
@@ -101,7 +103,7 @@ begin
 
         -- Cleanup State: Prepare for next transmission
         when Cleanup =>
-        --   TX_Active <= '0';
+          TX_Active <= '0';
           TX_Complete <= '1';
           CurrentState <= Idle;
 
@@ -114,6 +116,6 @@ begin
   end process UART_TX_Process;
 
   -- Output signal for transmission completion
-  TX_Done <= TX_Complete;
+  -- TX_Done <= TX_Complete;
 
 end RTL;

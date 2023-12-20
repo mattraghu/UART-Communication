@@ -19,19 +19,27 @@ set_property -dict {PACKAGE_PIN T9 IOSTANDARD LVCMOS33} [get_ports {anode[2]}]
 set_property -dict {PACKAGE_PIN J18 IOSTANDARD LVCMOS33} [get_ports {anode[1]}]
 set_property -dict {PACKAGE_PIN J17 IOSTANDARD LVCMOS33} [get_ports {anode[0]}]
 
-set_property -dict { PACKAGE_PIN N17   IOSTANDARD LVCMOS33 } [get_ports { SerialInput }]; #IO_L9P_T1_DQS_14 Sch=btnc
+# set_property -dict { PACKAGE_PIN N17   IOSTANDARD LVCMOS33 } [get_ports { SerialInput }]; #IO_L9P_T1_DQS_14 Sch=btnc
 set_property -dict {PACKAGE_PIN J13 IOSTANDARD LVCMOS33} [get_ports {DataValid}]
 set_property -dict {PACKAGE_PIN K15 IOSTANDARD LVCMOS33} [get_ports {Test}]
 
 set_property -dict {PACKAGE_PIN V11 IOSTANDARD LVCMOS33} [get_ports {Test2}]
 set_property -dict {PACKAGE_PIN V12 IOSTANDARD LVCMOS33} [get_ports {Test3}]
 
-# # Switches for changing the transmit byte
-# set_property -dict {PACKAGE_PIN J15 IOSTANDARD LVCMOS33} [get_ports {TransmitByte_SW[0]}]
-# set_property -dict {PACKAGE_PIN L16 IOSTANDARD LVCMOS33} [get_ports {TransmitByte_SW[1]}]
-# set_property -dict {PACKAGE_PIN M13 IOSTANDARD LVCMOS33} [get_ports {TransmitByte_SW[2]}]
-# set_property -dict {PACKAGE_PIN R15 IOSTANDARD LVCMOS33} [get_ports {TransmitByte_SW[3]}]
-# set_property -dict {PACKAGE_PIN R17 IOSTANDARD LVCMOS33} [get_ports {TransmitByte_SW[4]}]
-# set_property -dict {PACKAGE_PIN T18 IOSTANDARD LVCMOS33} [get_ports {TransmitByte_SW[5]}]
-# set_property -dict {PACKAGE_PIN U18 IOSTANDARD LVCMOS33} [get_ports {TransmitByte_SW[6]}]
-# set_property -dict {PACKAGE_PIN R13 IOSTANDARD LVCMOS33} [get_ports {TransmitByte_SW[7]}]
+# Switches for changing the transmit byte
+set_property -dict {PACKAGE_PIN J15 IOSTANDARD LVCMOS33} [get_ports {TransmitByte_SW[0]}]
+set_property -dict {PACKAGE_PIN L16 IOSTANDARD LVCMOS33} [get_ports {TransmitByte_SW[1]}]
+set_property -dict {PACKAGE_PIN M13 IOSTANDARD LVCMOS33} [get_ports {TransmitByte_SW[2]}]
+set_property -dict {PACKAGE_PIN R15 IOSTANDARD LVCMOS33} [get_ports {TransmitByte_SW[3]}]
+set_property -dict {PACKAGE_PIN R17 IOSTANDARD LVCMOS33} [get_ports {TransmitByte_SW[4]}]
+set_property -dict {PACKAGE_PIN T18 IOSTANDARD LVCMOS33} [get_ports {TransmitByte_SW[5]}]
+set_property -dict {PACKAGE_PIN U18 IOSTANDARD LVCMOS33} [get_ports {TransmitByte_SW[6]}]
+set_property -dict {PACKAGE_PIN R13 IOSTANDARD LVCMOS33} [get_ports {TransmitByte_SW[7]}]
+
+# Transmit Button
+set_property -dict {PACKAGE_PIN M18 IOSTANDARD LVCMOS33} [get_ports {Transmit_Button}]
+
+# Transmit Active Light
+set_property -dict {PACKAGE_PIN V17 IOSTANDARD LVCMOS33} [get_ports {TransmitActive_Light}]
+
+
