@@ -3,18 +3,19 @@ USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY leddec IS
 	PORT (
-		dig : IN STD_LOGIC_VECTOR (2 DOWNTO 0); -- which digit to currently display
-		data : IN STD_LOGIC_VECTOR (7 DOWNTO 0); -- 16-bit (4-digit) data
-		anode : OUT STD_LOGIC_VECTOR (7 DOWNTO 0); -- which anode to turn on
-		seg : OUT STD_LOGIC_VECTOR (6 DOWNTO 0)); -- segment code for current digit
+		dig 	: IN STD_LOGIC_VECTOR (1 DOWNTO 0); 	-- which digit to display
+		data 	: IN STD_LOGIC_VECTOR (7 DOWNTO 0); 	-- 16-bit (4-digit) data
+		t_r 	: IN STD_LOGIC 				 			-- flag bit for which panels to use for dig
+		anode 	: OUT STD_LOGIC_VECTOR (7 DOWNTO 0); 	-- which anode to turn on
+		seg 	: OUT STD_LOGIC_VECTOR (6 DOWNTO 0)); 	-- segment code for current digit
 END leddec;
 
 ARCHITECTURE Behavioral OF leddec IS
-	SIGNAL data4 : STD_LOGIC_VECTOR (4 DOWNTO 0); -- binary value of current digit
+	SIGNAL data4 : STD_LOGIC_VECTOR (4 DOWNTO 0); 	-- binary value of current digit
 BEGIN
 	-- Select digit data to be displayed in this mpx period
-	data4(4 DOWNTO 1) <= data(3 DOWNTO 0) WHEN dig = "000" ELSE -- digit 0
-	         data(7 DOWNTO 4) WHEN dig = "001" ELSE -- digit 1
+	data4(4 DOWNTO 1) <= data(3 DOWNTO 0) WHEN dig = "00" ELSE -- digit 0
+	         data(7 DOWNTO 4) WHEN dig = "01" ELSE -- digit 1
 			 "0000";
 	        --  data(11 DOWNTO 8) WHEN dig = "010" ELSE -- digit 2
 	        --  data(15 DOWNTO 12); -- digit 3
@@ -22,7 +23,7 @@ BEGIN
 	--Remove trailing zeros
 	data4(0) <=
 			-- '1' WHEN data(7 DOWNTO 4) = "0000" AND dig = "001";-- If the last digit is 0, turn off the last digit
-			'0' WHEN (dig = "001" or dig = "000") ELSE
+			'0' WHEN (dig = "01" or dig = "00") ELSE
 			'1';
 
 	-- data4(0) <= 
@@ -53,13 +54,15 @@ BEGIN
 	       "0111000" WHEN data4 = "11110" ELSE -- F
 	       "1111111";
 	-- Turn on anode of 7-segment display addressed by 3-bit digit selector dig
-	anode <= "11111110" WHEN dig = "000" ELSE -- 0
-	         "11111101" WHEN dig = "001" ELSE -- 1
-	         "11111011" WHEN dig = "010" ELSE -- 2
-	         "11110111" WHEN dig = "011" ELSE -- 3
---	         "11101111" WHEN dig = "100" ELSE -- 4
---	         "11011111" WHEN dig = "101" ELSE -- 5 
---	         "10111111" WHEN dig = "110" ELSE -- 6
---	         "01111111" WHEN dig = "111" ELSE -- 7
+	anode <= "11111110" WHEN dig = "00" AND t_r = '0' ELSE -- 0 -- Reciever side
+	         "11111101" WHEN dig = "01" AND t_r = '0' ELSE -- 1
+	         "11111011" WHEN dig = "10" AND t_r = '0' ELSE -- 2
+	         "11110111" WHEN dig = "11" AND t_r = '0' ELSE -- 3
+
+	-- Transmitter side
+	         "11101111" WHEN dig = "00" AND t_r = '1' ELSE -- 4
+	         "11011111" WHEN dig = "01" AND t_r = '1' ELSE -- 5 
+	         "10111111" WHEN dig = "10" AND t_r = '1' ELSE -- 6
+	         "01111111" WHEN dig = "11" AND t_r = '1' ELSE -- 7
 	         "11111111";
 END Behavioral;

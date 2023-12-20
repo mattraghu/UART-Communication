@@ -14,20 +14,23 @@ entity UART_Receiver is
     DataValid   : out std_logic;
     Test        : out std_logic;
 
-    Test2      : out std_logic;
-    Test3      : out std_logic;
+    Test2       : out std_logic;
+    Test3       : out std_logic;
 
-    anode      : out std_logic_vector(7 downto 0);
-    seg       : out std_logic_vector(6 downto 0);
+    r_anode     : out std_logic_vector(7 downto 0);
+    r_seg       : out std_logic_vector(6 downto 0);
+
+    t_anode     : out std_logic_vector(7 downto 0);
+    t_seg       : out std_logic_vector(6 downto 0);
     -- ReceivedByte: out std_logic_vector(7 downto 0)
 
     --Transmitter Variables
-    TransmitByte_SW : in std_logic_vector(7 downto 0);
+    TransmitByte_SW       : in std_logic_vector(7 downto 0);
     TransmitActive_Light  : out std_logic;
-    Transmit_Button : in std_logic;
+    Transmit_Button       : in std_logic;
 
-    TransmitPort : out std_logic;
-    ReceivePort : in std_logic
+    TransmitPort          : out std_logic;
+    ReceivePort            : in std_logic
     );
 end UART_Receiver;
 
@@ -35,10 +38,11 @@ architecture rtl of UART_Receiver is
 
 	COMPONENT leddec IS
 		PORT (
-			dig : IN STD_LOGIC_VECTOR (2 DOWNTO 0);
-			data : IN STD_LOGIC_VECTOR (7 DOWNTO 0); -- DON'T change, data is fixed 4 bits in leddec for each displays
+			dig   : IN STD_LOGIC_VECTOR (1 DOWNTO 0);
+			data  : IN STD_LOGIC_VECTOR (7 DOWNTO 0); -- DON'T change, data is fixed 4 bits in leddec for each displays
+      t_r   : IN STD_LOGIC
 			anode : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
-			seg : OUT STD_LOGIC_VECTOR (6 DOWNTO 0)
+			seg   : OUT STD_LOGIC_VECTOR (6 DOWNTO 0)
 		);
 	END COMPONENT;
 
@@ -69,9 +73,11 @@ architecture rtl of UART_Receiver is
   signal DataReady     : std_logic := '0';
 
   signal cnt : STD_LOGIC_VECTOR(32 downto 0) := (others => '0');
-  signal dig : STD_LOGIC_VECTOR(2 downto 0) := (others => '0');
+  signal dig : STD_LOGIC_VECTOR(1 downto 0) := (others => '0'); 
+
 
   signal SerialInput   : std_logic := '1';
+
 
 
 
@@ -99,13 +105,23 @@ begin
 
 
 
-  dig <= cnt(19 downto 17);
+  dig <= cnt(18 downto 17);
   L1 : leddec 
   PORT MAP (
     dig => dig,
+    t_r => '0'
     data => ByteAssembly,
-    anode => anode,
-    seg => seg
+    anode => r_anode,
+    seg => r_seg
+  );
+
+  L2 : leddec 
+  PORT MAP (
+    dig => dig,
+    t_r => '1'
+    data => TransmitByte_SW,
+    anode => t_anode,
+    seg => t_seg
   );
 
   SerialInputSampling : process (Clock)
