@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date             : Tue Dec 19 22:11:04 2023
+| Date             : Wed Dec 20 13:56:36 2023
 | Host             : DESKTOP-6DEOV28 running 64-bit major release  (build 9200)
 | Command          : report_power -file UART_Receiver_power_routed.rpt -pb UART_Receiver_power_summary_routed.pb -rpx UART_Receiver_power_routed.rpx
 | Design           : UART_Receiver
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 8.367        |
+| Total On-Chip Power (W)  | 12.050       |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 8.206        |
-| Device Static (W)        | 0.161        |
+| Dynamic (W)              | 11.811       |
+| Device Static (W)        | 0.239        |
 | Effective TJA (C/W)      | 4.6          |
-| Max Ambient (C)          | 46.8         |
-| Junction Temperature (C) | 63.2         |
+| Max Ambient (C)          | 30.0         |
+| Junction Temperature (C) | 80.0         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,17 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.416 |      202 |       --- |             --- |
-|   LUT as Logic |     0.350 |       85 |     63400 |            0.13 |
-|   CARRY4       |     0.035 |       13 |     15850 |            0.08 |
-|   Register     |     0.025 |       82 |    126800 |            0.06 |
+| Slice Logic    |     0.413 |      283 |       --- |             --- |
+|   LUT as Logic |     0.339 |      115 |     63400 |            0.18 |
+|   CARRY4       |     0.039 |       20 |     15850 |            0.13 |
+|   Register     |     0.029 |      111 |    126800 |            0.09 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
-|   F7/F8 Muxes  |    <0.001 |        1 |     63400 |           <0.01 |
 |   Others       |     0.000 |        4 |       --- |             --- |
-| Signals        |     0.432 |      165 |       --- |             --- |
-| I/O            |     7.358 |       30 |       210 |           14.29 |
-| Static Power   |     0.161 |          |           |                 |
-| Total          |     8.367 |          |           |                 |
+| Signals        |     0.475 |      235 |       --- |             --- |
+| I/O            |    10.923 |       32 |       210 |           15.24 |
+| Static Power   |     0.239 |          |           |                 |
+| Total          |    12.050 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,16 +71,16 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.954 |       0.888 |      0.067 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.293 |       0.268 |      0.024 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     2.075 |       2.071 |      0.004 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     1.060 |       0.932 |      0.128 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.431 |       0.399 |      0.032 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     3.083 |       3.079 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccbram   |       1.000 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.003 |       0.000 |      0.003 |       NA    | Unspecified | NA         |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |       NA    | Unspecified | NA         |
@@ -139,8 +138,8 @@ Table of Contents
 +-------------------------+-----------+
 | Name                    | Power (W) |
 +-------------------------+-----------+
-| UART_Receiver           |     8.206 |
-|   UART_Transmitter_Inst |     0.170 |
+| UART_Receiver           |    11.811 |
+|   UART_Transmitter_Inst |     0.304 |
 +-------------------------+-----------+
 
 

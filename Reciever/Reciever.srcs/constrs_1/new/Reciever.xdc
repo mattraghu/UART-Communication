@@ -42,4 +42,10 @@ set_property -dict {PACKAGE_PIN M18 IOSTANDARD LVCMOS33} [get_ports {Transmit_Bu
 # Transmit Active Light
 set_property -dict {PACKAGE_PIN V17 IOSTANDARD LVCMOS33} [get_ports {TransmitActive_Light}]
 
+# Transmit Port
+set_property -dict {PACKAGE_PIN C17 IOSTANDARD LVCMOS33} [get_ports {TransmitPort}]
+
+# Receive Port
+set_property -dict {PACKAGE_PIN D14 IOSTANDARD LVCMOS33} [get_ports {ReceivePort}]
+
 

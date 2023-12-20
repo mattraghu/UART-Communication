@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Tue Dec 19 22:10:48 2023
+| Date         : Wed Dec 20 13:56:20 2023
 | Host         : DESKTOP-6DEOV28 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file UART_Receiver_control_sets_placed.rpt
 | Design       : UART_Receiver
@@ -27,7 +27,7 @@ Table of Contents
 |    Minimum number of control sets                        |     7 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    30 |
+| Unused register locations in slices containing registers |    33 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -46,8 +46,8 @@ Table of Contents
 | >= 8 to < 10       |     1 |
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     0 |
-| >= 14 to < 16      |     2 |
-| >= 16              |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     3 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,12 +58,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              43 |           14 |
+| No           | No                    | No                     |              42 |           15 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |              11 |            5 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              28 |            9 |
+| Yes          | Yes                   | No                     |              58 |           17 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -74,12 +74,12 @@ Table of Contents
 |   Clock Signal   |              Enable Signal              |           Set/Reset Signal          | Slice Load Count | Bel Load Count | Bels / Slice |
 +------------------+-----------------------------------------+-------------------------------------+------------------+----------------+--------------+
 |  Clock_IBUF_BUFG | UART_Transmitter_Inst/TX_Active_i_1_n_0 |                                     |                1 |              1 |         1.00 |
+|  Clock_IBUF_BUFG | UART_Transmitter_Inst/CurrentState[2]   |                                     |                1 |              1 |         1.00 |
 |  Clock_IBUF_BUFG | DataReady_i_1_n_0                       |                                     |                1 |              1 |         1.00 |
-|  Clock_IBUF_BUFG | Test_i_1_n_0                            |                                     |                1 |              1 |         1.00 |
 |  Clock_IBUF_BUFG | UART_Transmitter_Inst/TX_Data_0         |                                     |                2 |              8 |         4.00 |
-|  Clock_IBUF_BUFG | UART_Transmitter_Inst/ClockCounter      | UART_Transmitter_Inst/ClockCounter0 |                4 |             14 |         3.50 |
-|  Clock_IBUF_BUFG | ClockCounter[13]_i_2_n_0                | BitCounter                          |                5 |             14 |         2.80 |
-|  Clock_IBUF_BUFG |                                         |                                     |               14 |             43 |         3.07 |
+|  Clock_IBUF_BUFG | UART_Transmitter_Inst/ClockCounter      | UART_Transmitter_Inst/ClockCounter0 |                8 |             29 |         3.62 |
+|  Clock_IBUF_BUFG | ClockCounter[28]_i_2__0_n_0             | ClockCounter[28]_i_1_n_0            |                9 |             29 |         3.22 |
+|  Clock_IBUF_BUFG |                                         |                                     |               15 |             42 |         2.80 |
 +------------------+-----------------------------------------+-------------------------------------+------------------+----------------+--------------+
 
 

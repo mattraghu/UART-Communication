@@ -6,7 +6,7 @@ USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity UART_Receiver is
   generic (
     -- ClkCyclesPerBit : integer := 115
-      ClkCyclesPerBit : integer := 10000--300000000
+      ClkCyclesPerBit : integer := 300000000
     );
   port (
     Clock       : in  std_logic;
@@ -21,10 +21,13 @@ entity UART_Receiver is
     seg       : out std_logic_vector(6 downto 0);
     -- ReceivedByte: out std_logic_vector(7 downto 0)
 
-    -- --Transmitter Variables
+    --Transmitter Variables
     TransmitByte_SW : in std_logic_vector(7 downto 0);
     TransmitActive_Light  : out std_logic;
-    Transmit_Button : in std_logic
+    Transmit_Button : in std_logic;
+
+    TransmitPort : out std_logic;
+    ReceivePort : in std_logic
     );
 end UART_Receiver;
 
@@ -74,6 +77,11 @@ architecture rtl of UART_Receiver is
 
    
 begin
+  -- Recieve Port test
+  Test <= ReceivePort;
+  SerialInput <= ReceivePort;
+
+
 
   -- Instantiate the UART Transmitter
   UART_Transmitter_Inst : UART_Transmitter
@@ -85,7 +93,7 @@ begin
     TransmitDV   => Transmit_Button,
     TransmitByte => TransmitByte_SW,
     TX_Active    => TransmitActive_Light,  
-    TX_Serial    => SerialInput
+    TX_Serial    => TransmitPort
     -- TX_Done      => TX_Done
   );
 
@@ -109,12 +117,6 @@ begin
       -- Shift the SerialInput into the SerialDataReg
       SerialDataReg <= SerialInput;
       SerialData    <= SerialDataReg; 
-
-      -- Set the Test to the SerialData if ClockCounter = 0
-      if ClockCounter = 0 then
-        Test <= SerialData;
-      end if;
-
 
     end if; 
   end process SerialInputSampling;

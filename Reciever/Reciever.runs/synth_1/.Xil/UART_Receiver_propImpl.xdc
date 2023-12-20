@@ -59,3 +59,7 @@ set_property src_info {type:XDC file:1 line:40 export:INPUT save:INPUT read:READ
 set_property -dict {PACKAGE_PIN M18 IOSTANDARD LVCMOS33} [get_ports {Transmit_Button}]
 set_property src_info {type:XDC file:1 line:43 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict {PACKAGE_PIN V17 IOSTANDARD LVCMOS33} [get_ports {TransmitActive_Light}]
+set_property src_info {type:XDC file:1 line:46 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict {PACKAGE_PIN C17 IOSTANDARD LVCMOS33} [get_ports {TransmitPort}]
+set_property src_info {type:XDC file:1 line:49 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict {PACKAGE_PIN D14 IOSTANDARD LVCMOS33} [get_ports {ReceivePort}]
