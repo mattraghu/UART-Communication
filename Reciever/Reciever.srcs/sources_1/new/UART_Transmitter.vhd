@@ -5,6 +5,7 @@ use ieee.numeric_std.all;
 -- UART Transmitter Entity Declaration
 entity UART_Transmitter is
   generic (
+    -- ClkCyclesPerBit : integer := 10417 -- 9600 Baud Rate
     ClkCyclesPerBit : integer := 100000000
     );
   port (
