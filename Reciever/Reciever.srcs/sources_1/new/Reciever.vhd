@@ -5,7 +5,7 @@ USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity UART_Receiver is
   generic (
-    -- ClkCyclesPerBit : integer := 115
+    -- ClkCyclesPerBit : integer := 10417 -- 9600 Baud Rate
       ClkCyclesPerBit : integer := 300000000
     );
   port (
