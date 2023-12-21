@@ -13,14 +13,24 @@ The code is uploaded to the board using Vivado. The project file is attached in 
 ### Plugging in the respective pins
 
 The `C17` port on the JA pin block (transmit pin) must be attached to the `D14` port on the JB pin block (receive pin). If you're using two boards then connect the transmit pin on one board to the receive pin on the other board and vice versa.
+![Alt text](image.png)
 
 ### Selecting the number to transmit
 
 The number that is being transmitted is selected by the switches on the board. On the board they are labeled as switches `J15`, `L16`, `M13`, `R15`, `R17`, `T18`, `U18`, and `R13`. The number is selected by flipping the switches on and off. If the switch is on, then the bit is set to 1. If the switch is off, then the bit is set to 0. The switches are read from left to right.
+![Alt text](image-1.png)
 
 ### Transmitting the number
 
 The transmission is triggered by the `M18` button on the board. Once the button is pressed, the number will be transmitted.
+
+![Alt text](image-3.png)
+
+## Results
+
+![Alt text](image-2.png)
+
+The program was successfully able to transmit the number to the receiver. The left four displays show the number that is being transmitted. The right four displays show the number that is being recieved. In this case we transmitted and recieved the hex number 17. They display the same number because we have them connected in the same board.
 
 ## How it works?
 
