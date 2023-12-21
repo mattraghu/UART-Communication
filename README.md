@@ -28,6 +28,8 @@ The whole program relies on the board's built in 100MHz clock. Each bit is sent 
 
 ### Transmitter
 
+![TX-1-1](https://github.com/mattraghu/UART-Communication/assets/94722008/7504479e-e001-4a19-bcd4-bfcad9089966)
+
 ```vhdl
 ClkCyclesPerBit : integer := 100000000
 ```
@@ -173,6 +175,8 @@ CurrentState <= Idle;
 In this state, the transmitter will set the `TX_Active` and `TX_Complete` signals to high. It will then move back to the `Idle` state.
 
 ### Receiver
+
+![RX-1-1](https://github.com/mattraghu/UART-Communication/assets/94722008/ca239cde-ff01-4d8b-923b-a235f5be646a)
 
 The reciever is a little more complicated than the transmitter. It has to be able to read the data that is being sent and display it on the seven segment display.
 
