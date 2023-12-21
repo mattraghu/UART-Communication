@@ -4,6 +4,24 @@
 
 The goal of this project is to create a communication between two Nexys 100T boards using the UART protocol. A transmitter sends an eight bit number based on a switch input to a receiver. The receiver then displays the number on the seven segment display.
 
+## Getting it to work
+
+### Uploading the code
+
+The code is uploaded to the board using Vivado. The project file is attached in this github repository. Once the project is opened in Vivado, the code can be uploaded to the board by clicking the "Generate Bitstream" button. Once the bitstream is generated, the code can be uploaded to the board by clicking the "Program Device" button.
+
+### Plugging in the respective pins
+
+The `C17` port on the JA pin block (transmit pin) must be attached to the `D14` port on the JB pin block (receive pin). If you're using two boards then connect the transmit pin on one board to the receive pin on the other board and vice versa.
+
+### Selecting the number to transmit
+
+The number that is being transmitted is selected by the switches on the board. On the board they are labeled as switches `J15`, `L16`, `M13`, `R15`, `R17`, `T18`, `U18`, and `R13`. The number is selected by flipping the switches on and off. If the switch is on, then the bit is set to 1. If the switch is off, then the bit is set to 0. The switches are read from left to right.
+
+### Transmitting the number
+
+The transmission is triggered by the `M18` button on the board. Once the button is pressed, the number will be transmitted.
+
 ## How it works?
 
 The whole program relies on the board's built in 100MHz clock. Each bit is sent in intervals. Let's first look at the `UART_Transmitter.vhd` script and analyze it.
@@ -287,3 +305,11 @@ PORT MAP (
 For this to work we had to create a new cnt variable that would increment every clock cycle. Dig (the screen that is being displayed) is set to 19th-17th bits of the cnt variable. This allows the display to cycle.
 
 The data is set to the `ByteAssembly` signal, which if you remember is the byte that is being assembled from the bits that are being recieved.
+
+## Conclusion
+
+We were able to successfully implement a UART communication. While we were not able to get together and communicate between two boards, we were able to communicate between the transmitter and receiver on the same board. We were also able to display the number that was being transmitted on the seven segment display which was a feat in itself. Matthew was responsible for implementing the transmission and reception logic. Ryan was responsible for implementing the seven segment display, and Robert was responsible for adding the input buttons/switches and getting the physical voltage to output (over using a direct connection between the transmitter and receiver).
+
+The hardest part was getting the timing right. We had to make sure that the transmitter and receiver were in sync. Otherwise, the receiver would read the data incorrectly.
+
+Overall, we learned a lot about the UART protocol and how to implement it in VHDL.
