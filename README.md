@@ -40,7 +40,15 @@ $$
 \frac{100000000 \text{ cycles}}{1 \text{ bit}} \cdot \frac{1 \text{s}}{100000000 \text{ cycles}} = 1 \text{s per bit}
 $$
 
-So with the 100000000 cycles per bit, each bit will be sent for 1 second.
+So with the 100000000 cycles per bit, each bit will be sent for 1 second (This would be a Baud Rate of 1)
+
+This is done for demonstration purposes, as normally the Baud Rates seen in actual implementations of UART are much faster.
+
+To change the baud rate to the common rate of 9600, the code in UART_Transmitter.vhd needs to be changed as follows:
+
+```vhdl
+ClkCyclesPerBit : integer := 10417
+```
 
 #### Important Signals/Ports
 
@@ -179,6 +187,19 @@ In this state, the transmitter will set the `TX_Active` and `TX_Complete` signal
 ![RX-1-1](https://github.com/mattraghu/UART-Communication/assets/94722008/ca239cde-ff01-4d8b-923b-a235f5be646a)
 
 The reciever is a little more complicated than the transmitter. It has to be able to read the data that is being sent and display it on the seven segment display.
+
+Like the transmitter, the code was also set to a slow baud rate (this time a rate of .33) for demonstration purposes:
+
+
+```vhdl
+ClkCyclesPerBit : integer := 300000000
+```
+
+Like previously done for in UART_Transmitter.vhd, to change the baud rate to 9600, the code in Reciever.vhd needs to be changed as follows:
+
+```vhdl
+ClkCyclesPerBit : integer := 10417
+```
 
 #### Important Signals/Ports
 
